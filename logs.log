@@ -1,0 +1,25 @@
+We have next logging message: 2025-03-20 17:09:39,294:DEBUG-debug
+We have next logging message: 2025-03-20 17:09:39,294:INFO-info
+We have next logging message: 2025-03-20 17:09:39,295:WARNING-warning
+We have next logging message: 2025-03-20 17:09:39,295:ERROR-error
+We have next logging message: 2025-03-20 17:09:39,295:CRITICAL-critical
+We have next logging message: 2025-03-20 17:09:39,295:ERROR-Exception
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\PythonProject\lesson6.py", line 13, in <module>
+    print(10/0)
+          ~~^~
+ZeroDivisionError: division by zero
+2025-04-01 10:27:56,184 - INFO - Starting adder simulation
+2025-04-01 10:27:56,184 - DEBUG - Test case 1: args=(1, 2, 3)
+2025-04-01 10:27:56,185 - DEBUG - Adder called with args=(1, 2, 3), kwargs={}. Result=6
+2025-04-01 10:27:56,185 - INFO - Result for test case 1: 6
+2025-04-01 10:27:56,185 - DEBUG - Test case 2: args=(10, 20, 30, 40)
+2025-04-01 10:27:56,185 - DEBUG - Adder called with args=(10, 20, 30, 40), kwargs={}. Result=100
+2025-04-01 10:27:56,185 - INFO - Result for test case 2: 100
+2025-04-01 10:27:56,185 - DEBUG - Test case 3: args=(5, -5, 10)
+2025-04-01 10:27:56,185 - DEBUG - Adder called with args=(5, -5, 10), kwargs={}. Result=10
+2025-04-01 10:27:56,185 - INFO - Result for test case 3: 10
+2025-04-01 10:27:56,185 - DEBUG - Test case 4: args=(16, 50, 53, 68, 41)
+2025-04-01 10:27:56,185 - DEBUG - Adder called with args=(16, 50, 53, 68, 41), kwargs={}. Result=228
+2025-04-01 10:27:56,185 - INFO - Result for test case 4: 228
+2025-04-01 10:27:56,185 - INFO - Simulation finished
