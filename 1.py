@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import sqlite3
 import datetime
 
-conn = sqlite3.connect('weather.db')
+conn = sqlite3.connect('weather.sl3')
 cursor = conn.cursor()
 
 
@@ -29,26 +29,30 @@ except requests.RequestException as e:
 soup = BeautifulSoup(response.text, 'html.parser')
 
 
-temp_elem = soup.find('span', id='temp')
+temp_elem = soup.find_all('p', class_='R1ENpvZz')
+temp1 = temp_elem[0].text
+temp = int(temp1[1:3])
+print(temp)
 
-if temp_elem:
-    try:
 
-        temperature = float(temp_elem.text.strip().replace('°', ''))
-    except ValueError:
-        print("Не вдалося перетворити значення температури в число")
-        conn.close()
-        exit()
-else:
-    print("Елемент з температурою не знайдено на сторінці")
-    conn.close()
-    exit()
+# if temp_elem:
+#     try:
+#
+#         temperature = float(temp_elem.text.strip().replace('°', ''))
+#     except ValueError:
+#         print("Не вдалося перетворити значення температури в число")
+#         conn.close()
+#         exit()
+# else:
+#     print("Елемент з температурою не знайдено на сторінці")
+#     conn.close()
+#     exit()
 
 
 now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-cursor.execute('INSERT INTO weather (date_time, temperature) VALUES (?, ?)', (now, temperature))
+cursor.execute('INSERT INTO weather (date_time, temperature) VALUES (?, ?)', (now, temp))
 conn.commit()
 
-print(f"Дані збережено. Час: {now}, Температура: {temperature}°.")
+print(f"Дані збережено. Час: {now}, Температура: {temp}°.")
 
 conn.close()
